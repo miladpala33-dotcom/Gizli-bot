@@ -6,7 +6,7 @@ from telegram.ext import Application, CommandHandler, ContextTypes
 # این تابع برای دستور /start هست
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     """وقتی کاربر دستور /start رو میزنه، این پیام رو براش میفرسته"""
-    user = update.effective_user
+    user = update.message.from_user
     await update.message.reply_html(
         f"سلام {user.mention_html()}!\n\nبه کافه دیجیتال Gizli خوش اومدی. من آماده‌ام تا سریع‌ترین اتصال رو برات فراهم کنم.",
     )
